@@ -17,6 +17,7 @@
         background-size: cover;
         }
       </style>
+      <script type="text/javascript">(function(o){var b="https://api.autopilothq.com/anywhere/",t="4477cccf69b046f6b7d8eae6f068694123b9396e8ad14070be57f01502313fce",a=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments);}},c=encodeURIComponent,s="SCRIPT",d=document,l=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||""),j="text/javascript",z,y;if(!window.Autopilot) window.Autopilot=a;if(o.app) p="devmode=true&"+p;z=function(src,asy){var e=d.createElement(s);e.src=src;e.type=j;e.async=asy;l.parentNode.insertBefore(e,l);};y=function(){z(b+t+'?'+p,true);};if(window.attachEvent){window.attachEvent("onload",y);}else{window.addEventListener("load",y,false);}})({});</script>
   </head>
   <body class="shards-landing-page--1">
       <div class="welcome-2 welcome d-flex justify-content-center flex-column">
@@ -35,9 +36,12 @@
             <div class="row">
               <div class="col-md-6 offset-md-3" style="text-align: center">
                   <h1 class="welcome-heading display-4 text-white">Reto de Crowdfunding</h1>
-                  <button class="btn btn-lg btn-outline-white btn-pill align-self-center" type="button" data-toggle="modal" data-target="#crowdfundingmodal">
+                  <button class="btn btn-lg btn-outline-white btn-pill align-self-center" type="button" data-toggle="modal" data-target="#paypalmodal">
                     Pago con Paypal
-                </button>
+                  </button>
+                  <button class="btn btn-lg btn-outline-white btn-pill align-self-center" type="button" data-toggle="modal" data-target="#oxxomodal">
+                    Pago en Oxxo
+                  </button>
               </div>
             </div>
           </div>
@@ -45,7 +49,7 @@
       </div>
 
      <!-- Modal Crowdfunding -->
-     <div class="modal fade" id="crowdfundingmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal fade" id="paypalmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -86,6 +90,43 @@
           </div>
         </div>
       </div>
+      
+      <!-- Oxxo Modal -->
+    <div class="modal fade" id="oxxomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Depósito en Oxxo</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <p>Registra el nombre de tu empresa y proporcionanos un correo electrónico al cuál podamos mandarte las instrucciones de pago</p>              
+                <form>
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                      <div class="form-group">
+                        <label for="empresa">Nombre de la empresa participante</label>
+                        <input type="email" class="form-control" id="empresa" placeholder="Ingresa el nombre de tu empresa">
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                      <div class="form-group">
+                        <label for="email">Dirección de Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico">
+                      </div>
+                    </div>
+                  </div>
+                  <input class="btn btn-primary btn-pill d-flex ml-auto mr-auto" type="submit" value="Enviar">
+                </form>
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-secondary align-self-center" data-dismiss="modal">Cerrar</button>  
+            </div>
+          </div>
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- JavaScript Dependencies: jQuery, Popper.js, Bootstrap JS, Shards JS -->
